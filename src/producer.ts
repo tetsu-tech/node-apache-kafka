@@ -12,8 +12,6 @@ const ensureTopicExists = (config: Config): Promise<void> => {
     'sasl.mechanisms': config['sasl.mechanisms']
   });
 
-  console.log('adminClient', adminClient);
-
   return new Promise<void>((resolve, reject) => {
     adminClient.createTopic({
       topic: config.topic,
